@@ -1,0 +1,32 @@
+{
+  "name": "hardware-extension",
+  "version": "0.1.0",
+  "description": "hardware bridge chrome extension for pagenodes",
+  "main": "main.js",
+  "devDependencies": {
+    "babel-core": "^5.8.25",
+    "browser-serialport": "^2.0.3",
+    "chrome-dgram": "^2.1.7",
+    "chrome-net": "^3.2.0",
+    "gulp": "^3.8.8",
+    "json-loader": "^0.5.3",
+    "lodash": "^3.10.1",
+    "rest": "^1.3.2",
+    "udp-serial": "^0.2.0",
+    "webpack": "^1.12.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel ./src/ --out-dir ./build && gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iceddev/hardware-extension.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/iceddev/hardware-extension/issues"
+  },
+  "homepage": "https://github.com/iceddev/hardware-extension"
+}

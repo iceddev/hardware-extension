@@ -23,7 +23,7 @@ gulp.task('bundle', function(cb) {
       ]
     },
     plugins: [
-      new webpack.IgnorePlugin(/^serialport$/)
+      // new webpack.IgnorePlugin(/^serialport$/, /.*/)
     ],
     externals: {
       repl: 'repl'
@@ -41,6 +41,7 @@ gulp.task('bundle', function(cb) {
         // replacing `fs` with a browser-compatible version
         net: 'chrome-net',
         serialport: 'browser-serialport',
+        "graceful-fs": 'browser-serialport',
         dgram: 'chrome-dgram'
       }
     }
@@ -48,7 +49,7 @@ gulp.task('bundle', function(cb) {
 });
 
 gulp.task('copy', function() {
-  return gulp.src(['./*.png', './manifest.json', './*.html', './*.css'])
+  return gulp.src(['./*.png', './manifest.json', './*.html', './*.css', './node_modules/avrgirl-arduino/junk/**'])
     .pipe(gulp.dest('./dist/'));
 });
 

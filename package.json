@@ -4,6 +4,7 @@
   "description": "hardware bridge chrome extension for pagenodes",
   "main": "main.js",
   "devDependencies": {
+    "avrgirl-arduino": "^1.7.1",
     "babel-core": "^5.8.25",
     "browser-serialport": "^2.0.3",
     "chrome-dgram": "^2.1.7",

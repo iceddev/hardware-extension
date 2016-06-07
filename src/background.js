@@ -4,13 +4,12 @@ const serialport = require('browser-serialport');
 const UdpSerialPort = require('udp-serial').SerialPort;
 const net = require('chrome-net');
 require('./lib/rest');
+require('./lib/writeFirmware');
+
+const connections = require('./lib/connections');
 
 const ports = {};
-const connections = {
-  serial: {},
-  tcp: {},
-  udp: {}
-};
+
 
 
 window.ports = ports;
@@ -196,6 +195,7 @@ events.on('rpc_connect', function(msg, port){
 });
 
 events.on('rpc_disconnect', function(msg){
+  console.log('rpc_disconnect', msg);
   if(connections[msg.params[0]] && connections[msg.params[0]][msg.params[1]]){
     var sp = connections[msg.params[0]][msg.params[1]];
     sp.close();
